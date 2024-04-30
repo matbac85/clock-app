@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Clock App</title>
+  </head>
+  <body>
+    <main id="background-image" class="daytime">
+      <section class="b-quote" id="quote-content">
+        <div class="e-quote__body">
+          <blockquote class="e-quote__text" id="quote">
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut odio
+            sint repellat incidunt optio dolor nisi modi saepe quibusdam soluta?
+            Consectetur ea in est nesciunt asperiores natus maiores quo culpa!"
+          </blockquote>
+          <p class="e-quote__author" id="author">Jane Doe</p>
+        </div>
+        <button class="e-quote__button" id="refresh-button">
+          <img src="./assets/desktop/icon-refresh.svg" alt="" />
+        </button>
+      </section>
+      <section class="b-content" id="main-content">
+        <div class="e-content__body">
+          <div class="e-content__moment">
+            <img src="./assets/desktop/icon-sun.svg" alt="" id="time-icon" />
+            <h1 id="current-moment">
+              Good Morning
+              <span class="e-content__title-desktop">, It's currently</span>
+            </h1>
+          </div>
+          <p class="e-content__time"><span id="current-time">11:37</span>bst</p>
+          <p class="e-content__location">
+            in <span id="location">London, UK</span>
+          </p>
+        </div>
+        <div class="b-button">
+          <p class="e-button__text" id="button-value">more</p>
+          <button class="e-button">
+            <img
+              class="e-button__arrow"
+              src="./assets/desktop/icon-arrow-down.svg"
+              alt=""
+              id="expand-button"
+            />
+          </button>
+        </div>
+      </section>
+      <section class="b-expanded-content invisible" id="expanded-content">
+        <div class="e-content-item">
+          <p class="e-property">current timezone</p>
+          <p class="e-value" id="timezone">Europe/London</p>
+        </div>
+        <div class="e-content-item">
+          <p class="e-property">day of the year</p>
+          <p class="e-value" id="day-year">295</p>
+        </div>
+        <div class="e-content-item">
+          <p class="e-property">day of the week</p>
+          <p class="e-value" id="day-week">5</p>
+        </div>
+        <div class="e-content-item">
+          <p class="e-property">week number</p>
+          <p class="e-value" id="week-number">42</p>
+        </div>
+      </section>
+    </main>
+    <!-- , it's currently in More Less Current timezone Day of the year Day of the
+    week Week number -->
+  </body>
+</html>
