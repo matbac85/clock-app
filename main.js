@@ -139,10 +139,9 @@ expandButton.addEventListener("click", function () {
   const buttonValue = document.getElementById("button-value");
   const expandedContent = document.getElementById("expanded-content");
   const quoteContent = document.getElementById("quote-content");
-  // Basculer la classe visible pour afficher ou masquer le contenu étendu
-  expandedContent.classList.toggle("visible");
-  quoteContent.classList.toggle("invisible");
 
+  // Basculer la classe visible pour afficher ou masquer le contenu étendu
+  handleContent(expandedContent, quoteContent);
   // Basculer la flèche du bouton
   toggleArrow(expandButton);
 
@@ -162,7 +161,12 @@ toggleButtonValue = (buttonText) => {
     : (buttonText.textContent = "more");
 };
 
-// toggleVisible = (moreContent, Content) => {
-//   moreContent.classList.toggle("invisible");
-//   Content.classList.toggle("invisible");
-// };
+handleContent = (expandedContent, quoteContent) => {
+  if (expandedContent.classList.contains("invisible")) {
+    expandedContent.classList.toggle("invisible");
+    quoteContent.classList.toggle("hidden");
+  } else {
+    expandedContent.classList.toggle("invisible");
+    quoteContent.classList.toggle("hidden");
+  }
+};
