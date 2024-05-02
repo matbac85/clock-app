@@ -9,6 +9,8 @@ async function fetchTimeByIP() {
     const currentMomentOfDay = document.getElementById("current-moment");
     const timeIcon = document.getElementById("time-icon");
     const backgroundImage = document.getElementById("background-image");
+    const expandedContentBackground =
+      document.getElementById("expanded-content");
 
     const timeData = await response.json();
     const timeString = timeData.datetime.substring(11, 16); // Extraction de l'heure au format HH:MM
@@ -28,7 +30,7 @@ async function fetchTimeByIP() {
 
     giveAccurateGreeting(hour, currentMomentOfDay);
     setFittingIcon(hour, timeIcon);
-    setFittingBackground(hour, backgroundImage);
+    setFittingBackground(hour, backgroundImage, expandedContentBackground);
   } catch (error) {
     console.error("There was a problem with the fetch operation:", error);
   }
@@ -98,13 +100,17 @@ setFittingIcon = (time, fittingIcon) => {
   }
 };
 
-setFittingBackground = (time, fittingBackground) => {
+setFittingBackground = (time, fittingBackground, fittingBackgroundColor) => {
   if (time >= 5 && time < 18) {
     fittingBackground.classList.remove("nighttime");
     fittingBackground.classList.add("daytime");
+    fittingBackgroundColor.classList.remove("bcg-night");
+    fittingBackgroundColor.classList.add("bcg-day");
   } else {
     fittingBackground.classList.remove("daytime");
     fittingBackground.classList.add("nighttime");
+    fittingBackgroundColor.classList.remove("bcg-day");
+    fittingBackgroundColor.classList.add("bcg-night");
   }
 };
 

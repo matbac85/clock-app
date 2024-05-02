@@ -66,6 +66,16 @@ main {
   display: grid;
 }
 
+.bcg-day {
+  background-color: rgba(255, 255, 255, 0.75);
+  color: var(--neutral-800);
+}
+
+.bcg-night {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: var(--neutral-100);
+}
+
 .daytime {
   background-image: url(./assets/mobile/bg-image-daytime.jpg);
 }
@@ -76,7 +86,7 @@ main {
 
 .e-quote__text {
   font-weight: var(--fw-reg);
-  min-width: clamp(20.25rem, 63.359vw + 5.4rem, 35.813rem);
+  /* min-width: clamp(20.25rem, 63.359vw + 5.4rem, 35.813rem); */
   max-width: clamp(20.25rem, 63.359vw + 5.4rem, 35.813rem);
   margin-bottom: 0.5rem;
 }
@@ -105,13 +115,21 @@ button {
   cursor: pointer;
 }
 
+.e-quote__button {
+  min-width: 1rem;
+}
+
 .e-content__moment {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
 }
 
 h1 {
+  margin-left: 1rem;
+}
+
+h1,
+.e-content__title-desktop {
   font-weight: var(--fw-reg);
   text-transform: uppercase;
   font-size: clamp(0.938rem, 0.469vw + 0.827rem, 1.25rem);
@@ -134,6 +152,10 @@ h1 {
   gap: 0.9375rem;
   padding: 0.25rem 0.25rem 0.25rem 1rem;
   border-radius: 1.75rem;
+}
+
+.e-button:hover {
+  background-color: #999999;
 }
 
 .e-content__body,
@@ -194,11 +216,12 @@ h1 {
 }
 
 .b-expanded-content {
-  background-color: rgba(255, 255, 255, 0.75);
+  /* background-color: rgba(255, 255, 255, 0.75); */
   padding: 3rem 1.625rem;
   display: grid;
   gap: 1rem;
   align-self: flex-end;
+  transition: 0.5s;
 }
 
 .e-content-item {
@@ -207,10 +230,10 @@ h1 {
   align-items: end;
 }
 
-.e-property,
+/* .e-property,
 .e-value {
   color: var(--neutral-800);
-}
+} */
 
 .e-property {
   font-weight: var(--fw-reg);
@@ -226,9 +249,10 @@ h1 {
 }
 
 @media (min-width: 37.5rem) {
-  /* main {
-    padding: 5rem 0 4rem 4rem;
-  } */
+  main {
+    grid-template-rows: auto 440px;
+    grid-template-columns: 1fr;
+  }
 
   .daytime {
     background-image: url(./assets/tablet/bg-image-daytime.jpg);
@@ -246,6 +270,7 @@ h1 {
 
   .b-content {
     margin: 9.5625rem 0 4rem 4rem;
+    gap: 5rem;
   }
 
   .b-expanded-content {
@@ -269,6 +294,7 @@ h1 {
 
   .e-content__title-desktop {
     display: block;
+    font-size: 1.125rem;
   }
 
   .e-content__time span {
@@ -289,6 +315,9 @@ h1 {
 }
 
 @media (min-width: 60rem) {
+  main {
+    grid-template-rows: auto 400px;
+  }
   .daytime {
     background-image: url(./assets/desktop/bg-image-daytime.jpg);
   }
@@ -297,7 +326,8 @@ h1 {
     background-image: url(./assets/desktop/bg-image-nighttime.jpg);
   }
 
-  h1 {
+  h1,
+  .e-content__title-desktop {
     font-size: 1.25rem;
   }
 
@@ -323,7 +353,7 @@ h1 {
     flex-direction: row;
     align-items: flex-end;
     gap: 21.5625rem;
-    margin: 0 0 6.125rem 10.3125rem;
+    margin: 0 0 3.5rem 10.3125rem;
   }
 
   .e-property {
@@ -345,6 +375,15 @@ h1 {
   }
 }
 
-.invisible {
+.hidden {
   display: none;
+}
+
+.invisible {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  transition: 0.5s;
 }
