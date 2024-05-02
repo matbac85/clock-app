@@ -66,16 +66,6 @@ main {
   display: grid;
 }
 
-.bcg-day {
-  background-color: rgba(255, 255, 255, 0.75);
-  color: var(--neutral-800);
-}
-
-.bcg-night {
-  background-color: rgba(0, 0, 0, 0.75);
-  color: var(--neutral-100);
-}
-
 .daytime {
   background-image: url(./assets/mobile/bg-image-daytime.jpg);
 }

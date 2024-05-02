@@ -104,13 +104,13 @@ setFittingBackground = (time, fittingBackground, fittingBackgroundColor) => {
   if (time >= 5 && time < 18) {
     fittingBackground.classList.remove("nighttime");
     fittingBackground.classList.add("daytime");
-    fittingBackgroundColor.classList.remove("bcg-night");
-    fittingBackgroundColor.classList.add("bcg-day");
+    fittingBackgroundColor.style.backgroundColor = "rgba(255, 255, 255, 0.75)";
+    fittingBackgroundColor.style.color = "#303030";
   } else {
     fittingBackground.classList.remove("daytime");
     fittingBackground.classList.add("nighttime");
-    fittingBackgroundColor.classList.remove("bcg-day");
-    fittingBackgroundColor.classList.add("bcg-night");
+    fittingBackgroundColor.style.backgroundColor = "rgba(0, 0, 0, 0.75)";
+    fittingBackgroundColor.style.color = "#ffffff";
   }
 };
 
