@@ -14,7 +14,7 @@ async function fetchTimeByIP() {
 
     const timeData = await response.json();
     const timeString = timeData.datetime.substring(11, 16); // Extraction de l'heure au format HH:MM
-    const hour = timeData.datetime.substring(11, 13);
+    const hour = timeData.datetime.substring(11, 13) + 10;
 
     currentTime.textContent = timeString;
 
