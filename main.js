@@ -39,6 +39,9 @@ async function fetchTimeByIP() {
 // Appel de la fonction
 fetchTimeByIP();
 
+// Appel de la fonction fetchTimeByIP toutes les secondes pour mettre à jour l'heure en temps réel
+setInterval(fetchTimeByIP, 1000);
+
 function fetchLocationByIP() {
   fetch("https://ipinfo.io/json")
     .then((response) => {
