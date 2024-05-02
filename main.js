@@ -1,6 +1,6 @@
 async function fetchTimeByIP() {
   try {
-    const response = await fetch("http://worldtimeapi.org/api/ip");
+    const response = await fetch("https://worldtimeapi.org/api/ip");
 
     if (!response.ok) {
       throw new Error("Network response was not ok");
