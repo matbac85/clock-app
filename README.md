@@ -35,4 +35,4 @@ This clock application was built as a solution to the Frontend Mentor challenge.
 ## Links
 
 - Solution URL: [Clock App Solution](https://matbac85.github.io/clock-app/)
-- Frontend Mentor Profile: [Your Frontend Mentor Profile](https://www.frontendmentor.io/profile/matbac85)
+- Frontend Mentor Profile: [Frontend Mentor Profile](https://www.frontendmentor.io/profile/matbac85)
