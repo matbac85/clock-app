@@ -25,7 +25,10 @@ async function fetchTimeByIP() {
 
     timezone.textContent = timeData.timezone;
     dayYear.textContent = timeData.day_of_year;
-    dayWeek.textContent = timeData.day_of_week;
+
+    const dayOfWeek = timeData.day_of_week === 0 ? 7 : timeData.day_of_week;
+    dayWeek.textContent = dayOfWeek;
+
     weekNumber.textContent = timeData.week_number;
 
     giveAccurateGreeting(hour, currentMomentOfDay);
@@ -148,11 +151,12 @@ expandButton.addEventListener("click", function () {
   const buttonValue = document.getElementById("button-value");
   const expandedContent = document.getElementById("expanded-content");
   const quoteContent = document.getElementById("quote-content");
+  const arrow = document.getElementById("arrow");
 
   // Basculer la classe visible pour afficher ou masquer le contenu étendu
   handleContent(expandedContent, quoteContent);
   // Basculer la flèche du bouton
-  toggleArrow(expandButton);
+  toggleArrow(arrow);
 
   // Basculer la valeur du bouton
   toggleButtonValue(buttonValue);
